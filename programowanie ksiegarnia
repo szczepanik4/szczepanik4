@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+struct Ksiazka{
+	string tytul;
+	string autor;
+	unsigned short int rokWydania;
+	int cena;
+	bool twardaOkladka;
+	bool podrczenik;
+};
+
+struct Adres{
+	string ulica;
+	float nrDomu;
+	float kodPocztowy;
+};
+
+struct Klient{
+	string imie;
+	string nazwisko;
+	unsigned short int dataUrodzenia;
+	Adres adres{};
+};
+
+class Ksiegarnia{
+	public:
+	Klient klient;
+	Ksiazka ksiazka;
+};
+
+void showAllData();
+
+int main(int argc, char** argv) {
+	return 0;
+}
