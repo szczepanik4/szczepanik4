@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+ 
+//deklaracja struktury
+struct DataBirthday{
+//deklaracja pol struktury
+	unsigned short int dd, mm, rrrr;
+};
+ 
+//definicja klasy
+class Student{
+	public:
+//definicje właściwości z ich inicjalizacją zerową
+	int id {};
+	string name{}, surname{};
+//deklaracja wlaściwości typu strukturowego
+	DataBirthday dataBirthday{};
+	void showAllData();
+};
+
+	void Student::showAllData(){
+		cout<<"ID: " << id << "\nImię i nazwisko"
+			<< name << " " << surname << endl;
+	}
+
+int main(int argc, char** argv) {
+	setlocale(LC_CTYPE, "polish");
+	Student uczen;
+	
+// 	uczen.dataBirthday ={11,02,2005};
+	
+	cout << "podaj datę urodzenie: \n";
+	cout << "Dzień: ";
+	cin >> uczen.dataBirthday.dd;
+	cout << "Miesiąc: ";
+	cin >> uczen.dataBirthday.mm;
+	cout << "Rok: ";
+	cin >> uczen.dataBirthday.rrrr;
+	
+	uczen.showAllData();
+	cout <<"data urodzenia: "<<uczen.dataBirthday.dd << "-"
+		 <<uczen.dataBirthday.mm<<"-"<<uczen.dataBirthday.rrrr;
+	
+	return 0;
+}
