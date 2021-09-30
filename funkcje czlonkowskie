@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+class Room{
+	public:
+		float length, width;
+		
+		inline int intLength(){
+			return round(length);
+		}
+		
+		inline int intWidth(){
+			return round(width);
+		}
+};
+
+int main(int argc, char** argv) {
+	setlocale(LC_CTYPE,"polish");
+	
+	Room pokoj;
+	pokoj.length=3.5;
+	pokoj.width=5.5;
+	
+	cout<<"Długość pokoju: "<<pokoj.length<<"cm"
+		<<"m\nDługość pokoju po zaokrągleniu: "
+		<<pokoj.intLength()<<"m\nSzerokość pokoju: "
+		<<pokoj.intWidth()<<"m\nSzerokość pokoju po zaokrągleniu: "
+		<<pokoj.intWidth()<<"m\n\n";
+	
+	
+	return 0;
+}
